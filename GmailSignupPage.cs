@@ -1,16 +1,16 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ForChild.Pages;
+using ForMySelf.Pages;
 
-
-namespace ForChild.Pages
+namespace ForMySelf.Pages
 {
     class GmailSignupPage
-    {
+     {
         public IWebDriver driver;
 
         public GmailSignupPage(IWebDriver driver)
@@ -27,11 +27,10 @@ namespace ForChild.Pages
             homepage.TypeCreateAccount();
 
             System.Threading.Thread.Sleep(2000);
-            homepage.TypeMyChild();
-            System.Threading.Thread.Sleep(2000);
-            homepage.TypeAgreed();
+            homepage.TypeMySelf();
 
             System.Threading.Thread.Sleep(1000);
+
             driver.FindElement(By.Name("firstName")).SendKeys("fahim");
             driver.FindElement(By.Name("lastName")).SendKeys("yasin");
             driver.FindElement(By.Id("username")).SendKeys("fahimyaseen001");
@@ -44,5 +43,6 @@ namespace ForChild.Pages
             System.Threading.Thread.Sleep(3000);
 
         }
+
     }
 }
